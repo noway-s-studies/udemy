@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+</head>
+<body ng-init="list = [{name:'Albeert', age: 29},{name:'Balázs', age: 35},{name:'Cecilia', age: 13},{name:'Dóra', age: 21},{name:'Evelin', age: 39}]">
+    <input type="text" ng-model="search">
+    <ul>
+        <li ng-repeat="item in list | filter:search">
+            {{item.name}} [<em>{{item.age}}</em>]
+        </li>
+    </ul>
+</body>
+</html>
