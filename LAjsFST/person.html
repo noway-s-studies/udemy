@@ -1,0 +1,14 @@
+<ul ng-class="hide ? 'hidden' : ''">
+    <li ng-repeat="item in dir.list | filter:search | limitTo:10 | orderBy:'age'" 
+        ng-class="{
+            'over-thirty': item.age > 30, 
+            'under-thirty': item.age < 30
+        }"
+        ng-class="item.age > 30 ? 'over-thirty-2' : 'under-thirty-2'"
+        class="person-{{item.name | lowercase}}">
+        {{item.name}} [<em>{{item.age}}</em>] 
+        {<em>{{item.age | currency}}</em>}
+        {<em>{{item.age | currency:"Ft.":0}}</em>}
+        <img ng-src="{{item.img}}" style="height: 50px;" />
+    </li>
+</ul>

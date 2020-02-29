@@ -22,6 +22,9 @@ $ npm install angular@1.7.9
   * Szűrők
   * Láthatóság
   * Stílus (feltételhez kötés)
+  * Kép betöltés
+  * Felület kiszervezés
+  * Animáció
 
 ## Kódok
 ```js
@@ -36,9 +39,24 @@ $ npm install angular@1.7.9
 </li>						# 
 
 <input ng-model="seaech">			# Szűrő
- ng-repeat="item in list 
- | filter:search  # érték szűrő
- | limitTo:10 # Eredmény darabszám korlátozás
- | orderBy:'age' # Eredmény rendezési elv
- | currency:"Ft.":0 # Valuta forma tizedes megadással
+ ng-repeat="item in list 			#
+ | filter:search    				# érték szűrő
+ | limitTo:10 					# Eredmény darabszám korlátozás
+ | orderBy:'age' 				# Eredmény rendezési elv
+ | currency:"Ft.":0 				# Valuta forma tizedes megadással
+
+ng-src="{{item.img}}" 				# Kép utótöltő
+
+ng-if="false"  					# Láthatatlan kód szinten
+
+ng-show="false"  				# Láthatatlan osztály szinten
+
+<div ng-include="'person.html'">  		# Kiszervezés
+<ng-include src="'person.html'">		#
+
+angular-animate.js  				# Animáció
+.ng-enter					#
+.ng-enter.ng-enter-active			#
+.ng-leave					#
+.ng-leave.ng-leave-active			#
 ```

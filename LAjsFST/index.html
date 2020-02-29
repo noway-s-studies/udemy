@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AngularJS</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-animate.js"></script>
     <script src="my-app.js"></script>
     <style>
+        ul{
+            list-style: none;
+        }
+        .li{
+            display: flex;
+            margin-bottom: 10px;
+        }
         .over-thirty {
             background-color: bisque;
         }
@@ -21,6 +29,24 @@
         }
         .hidden{
             display: none;
+        }
+        ul.ng-enter{
+            transition: 3.5s ease all;
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        ul.ng-enter.ng-enter-active{
+            opacity: 1;
+            transform: translateX(0);
+        }
+        ul.ng-leave{
+            transition: 3.5s ease all;
+            opacity: 1;
+            transform: translateX(0);
+        }
+        ul.ng-leave.ng-leave-active{
+            transform: translateX(-100%);
+            opacity: 0;
         }
     </style>
 </head>
@@ -57,7 +83,12 @@
             {{item.name}} [<em>{{item.age}}</em>] 
             {<em>{{item.age | currency}}</em>}
             {<em>{{item.age | currency:"Ft.":0}}</em>}
+            <img ng-src="{{item.img}}" style="height: 50px;" />
         </li>
     </ul>
+    <hr>
+    <div ng-include="'person.html'"></div>
+    <hr>
+    <ng-include src="'person.html'"></ng-include>
 </body>
 </html>
