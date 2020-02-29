@@ -30,10 +30,10 @@ npm-debug.log*
 /.vscode
 /coverage
 /dist
-/node_modules
-/node_modules/*
-/node_modules/angular
-/node_modules/angular/*
+/LAjsFST/node_modules
+/LAjsFST/node_modules/*
+/LAjsFST/node_modules/angular
+/LAjsFST/node_modules/angular/*
 /platforms
 /plugins
 /www
