@@ -15,9 +15,13 @@ $ npm install angular@1.7.9
 
 ## Témakörök
 
-  * Parser
-  * Message Builder/Editor API
-  * Server/Client components for TCP and File System Based Interfaces
+  * Érték kiírás
+  * Tömb bejárás
+  * JS kód kiszervezés
+  * Változó bevezetés
+  * Szűrők
+  * Láthatóság
+  * Stílus (feltételhez kötés)
 
 ## Kódok
 ```js
@@ -32,5 +36,9 @@ $ npm install angular@1.7.9
 </li>						# 
 
 <input ng-model="seaech">			# Szűrő
- ng-repeat="item in list | filter:seaech"	#
+ ng-repeat="item in list 
+ | filter:search  # érték szűrő
+ | limitTo:10 # Eredmény darabszám korlátozás
+ | orderBy:'age' # Eredmény rendezési elv
+ | currency:"Ft.":0 # Valuta forma tizedes megadással
 ```

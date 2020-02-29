@@ -6,20 +6,57 @@
     <title>AngularJS</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
     <script src="my-app.js"></script>
+    <style>
+        .over-thirty {
+            background-color: bisque;
+        }
+        .under-thirty{
+            background-color: aquamarine;
+        }
+        .over-thirty-2 {
+            color: brown;
+        }
+        .under-thirty-2{
+            color: chartreuse;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
 </head>
-<body ng-controller="dirController">
-    Bűvítő:
-    <form ng-submit="add()">
-        <input type="text" placeholder="Név" ng-model="name">
-        <input type="text" placeholder="Év" ng-model="age">
+<body ng-controller="dirController as dir" ng-init="hide = true">
+    Bővítő:
+    <form ng-submit="dir.add()">
+        <input type="text" placeholder="Név" ng-model="dir.name">
+        <input type="text" placeholder="Év" ng-model="dir.age">
         <input type="submit" value="Felvesz">
     </form>
     <hr>
     Szűrő: <input type="text" ng-model="search">
     <hr>
-    <ul>
-        <li ng-repeat="item in list | filter:search">
-            {{item.name}} [<em>{{item.age}}</em>]
+    <input 
+        type="button" value="Mutat" 
+        ng-class="!hide ? 'hidden' : ''" 
+        ng-click="hide = !hide">
+    <input type="button" value="Rejt" 
+        ng-class="hide ? 'hidden' : ''" 
+        ng-click="hide = !hide">
+    <spam ng-if="hide">Mutat [if]</spam>
+    <spam ng-if="!hide">Rejt [if]</spam>
+    <spam ng-show="hide">Mutat [show]</spam>
+    <spam ng-show="!hide">Rejt [show]</spam>
+    <hr>
+    <ul ng-class="hide ? 'hidden' : ''">
+        <li ng-repeat="item in dir.list | filter:search | limitTo:10 | orderBy:'age'" 
+            ng-class="{
+                'over-thirty': item.age > 30, 
+                'under-thirty': item.age < 30
+            }"
+            ng-class="item.age > 30 ? 'over-thirty-2' : 'under-thirty-2'"
+            class="person-{{item.name | lowercase}}">
+            {{item.name}} [<em>{{item.age}}</em>] 
+            {<em>{{item.age | currency}}</em>}
+            {<em>{{item.age | currency:"Ft.":0}}</em>}
         </li>
     </ul>
 </body>
