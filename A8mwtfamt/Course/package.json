@@ -1,12 +1,15 @@
 {
   "name": "course",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc var.ts let.ts const.ts special.ts primitives.ts -w",
+    "start": "tsc classes.ts -w --t es5",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "noway",
-  "license": "ISC"
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  }
 }
