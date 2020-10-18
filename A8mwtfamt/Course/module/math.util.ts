@@ -17,3 +17,5 @@ function divide(a, b): number{
 function log() {
     console.log(`Math logged!`);
 }
+
+export { add, subtract, multiply, divide, log }
