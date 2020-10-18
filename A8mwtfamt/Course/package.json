@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "tsc interfaces.ts -w --t es5",
+    "start": "tsc arrows.ts -w --t es5",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "noway",
