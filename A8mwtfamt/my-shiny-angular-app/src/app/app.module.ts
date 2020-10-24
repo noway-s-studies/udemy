@@ -1,5 +1,5 @@
+import { UserComponent } from './user/user.component';
 import { HeaderComponent } from './core/header/header.component';
-import { UserService } from './user/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -14,10 +14,11 @@ import { SafePipe } from './pipes/safe/safe.pipe';
     TransformDirective,
     SafePipe,
     HeaderComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
