@@ -32,7 +32,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-shiny-angular-app';
-  name: string = 'Robi';
+  name = 'Robi';
   isOpen = true;
   toggle(){
     this.isOpen = !this.isOpen;

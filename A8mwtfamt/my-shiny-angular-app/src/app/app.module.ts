@@ -8,6 +8,7 @@ import { TransformDirective } from './transform.directive';
 import { SafePipe } from './pipes/safe/safe.pipe';
 import { ChatComponent } from './components/chat/chat.component';
 import { UsersComponent } from './components/users/users.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -22,12 +23,15 @@ import { UsersComponent } from './components/users/users.component';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [
     AppComponent, 
     UserComponent,
     TransformDirective,
+
+
   ]
 })
 export class AppModule { }
