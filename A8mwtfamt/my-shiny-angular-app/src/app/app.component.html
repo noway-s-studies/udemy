@@ -1,4 +1,11 @@
 <app-header></app-header>
 <h1>Hello World!</h1>
+{{ name }}
 <app-user></app-user>
 <app-chat></app-chat>
+<div
+  [@openClose]="isOpen ? 'open' : 'closed'"
+  class="open-close-container"
+  (click)="toggle()">
+  <p>Teszt box open: {{ isOpen }}</p>
+</div>
