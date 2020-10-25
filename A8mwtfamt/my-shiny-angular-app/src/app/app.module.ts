@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TransformDirective } from './transform.directive';
 import { SafePipe } from './pipes/safe/safe.pipe';
 import { ChatComponent } from './components/chat/chat.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ChatComponent } from './components/chat/chat.component';
     TransformDirective,
     SafePipe,
     ChatComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
